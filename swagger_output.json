@@ -1,0 +1,205 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "DEVinBank Pagamentos",
+    "description": "Endpoints da aplicação DEVinBank Pagamentos",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3333",
+  "servers": [
+    {
+      "url": "http://localhost:3333",
+      "description": "Development server",
+      "templates": {
+        "scheme": {
+          "enum": ["http", "https"],
+          "default": "https"
+        }
+      }
+    }
+  ],
+  "basePath": "/",
+  "schemes": ["http"],
+  "paths": {
+    "/v1/companies/finance/{userid}": {
+      "get": {
+        "tags": ["Companies"],
+        "description": "Endpoint para resgatar informações dos gastos mensais e anuais de determinado usuário,também é possível filtrar o total de determinado tipo de gasto via query",
+        "parameters": [
+          {
+            "name": "userid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/v1/companies/{id}": {
+      "post": {
+        "tags": ["Companies"],
+        "description": "Endpoint para adicionar informações dos gastos de um determinado usuário via arquivo do tipo xlsx, é necessário que as células da primeira linha do arquivo estejam escritas como: célula A1 -> price, célula B1 -> typesOfExpenses, célula C1 -> date, célula D1 -> name.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "xlsxfile",
+            "in": "body",
+            "schema": {
+              "required": ["name"],
+              "properties": {
+                "price": {
+                  "type": "number",
+                  "example": "3500"
+                },
+                "typesOfExpenses": {
+                  "type": "string",
+                  "example": "Shopping"
+                },
+                "date": {
+                  "type": "date",
+                  "example": "04/01/2022"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "first buy"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/v1/company/finance/{userid}/{financialid}": {
+      "delete": {
+        "tags": ["Companies"],
+        "description": "Endpoint para deletar determinado gasto do usuário a partir do id do usuário e id do gasto, é necessário enviar os dois ids via parâmetro da requisição.",
+        "parameters": [
+          {
+            "name": "userid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "financialid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/v1/user/{id}": {
+      "get": {
+        "tags": ["Users"],
+        "description": "Endpoint para retornar informações sobre determinado usuário, é necessário enviar o parâmetro id via url.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "parameters": {
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Users"],
+        "description": "Endpoint para atualizar determinado usuário a partir do id, é necessário enviar o id via parâmetro da requisição e o nome e e-mail do novo usuário em um json, caso algum campo não requisitado seja adicionado no json retornará um erro.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "João"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "joao@madeira.com"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/v1/user": {
+      "post": {
+        "tags": ["Users"],
+        "description": "Endpoint para criar usuário, é necessário enviar o nome e e-mail do novo usuário.",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "João"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "joao@madeira.com"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    }
+  }
+}
