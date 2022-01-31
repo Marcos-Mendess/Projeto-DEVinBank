@@ -106,7 +106,7 @@ or
 }
 ```
 
-## Post /v1/company/finance/:userid/:financialid
+## Delete /v1/company/finance/:userid/:financialid
 Endpoint para deletar determinado gasto do usuário a partir do id do usuário e id do gasto, é necessário enviar os dois ids via parâmetro da requisição.
 
 **Parameters**
@@ -126,3 +126,25 @@ or
   "message": "Não foi possível deletar os dados."
 }
 ```
+
+## Get /v1/companies/finance/:userid
+Endpoint para resgatar informações dos gastos mensais e anuais de determinado usuário,também é possível filtrar o total de determinado tipo de gasto via query.
+
+**Parameters**
+
+|          Name | Required |  Type   | Description                                                                                                                                                           |
+| -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|      `userid` | required | string  | userid de determinado usuário.  |
+
+**Response body example**
+```
+{
+  "Object"
+}
+or
+{
+  "message": "Não foi possível deletar os dados."
+}
+
+```
+
