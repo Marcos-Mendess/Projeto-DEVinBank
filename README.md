@@ -106,3 +106,23 @@ or
 }
 ```
 
+## Post /v1/company/finance/:userid/:financialid
+Endpoint para deletar determinado gasto do usuário a partir do id do usuário e id do gasto, é necessário enviar os dois ids via parâmetro da requisição.
+
+**Parameters**
+
+|          Name | Required |  Type   | Description                                                                                                                                                           |
+| -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|      `userid` | required | string  | userid de determinado usuário.  |
+|     `financialid` | required | string  | financialid da determinada compra.
+
+**Response body example**
+```
+{ 
+  "message": "dados deletados com sucesso" 
+}
+or
+{
+  "message": "Não foi possível deletar os dados."
+}
+```
