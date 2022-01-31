@@ -116,7 +116,7 @@ module.exports = {
 
     createOrUpdateData("company.json", companyUpdate);
 
-    return res.status(200).send({ message: "Usuários salvos com sucesso" });
+    return res.status(200).send({ message: "Dados salvos com sucesso" });
   },
 
   async deleteFinancialId(req, res) {
@@ -170,8 +170,8 @@ module.exports = {
     }
     const years = [];
     const months = [];
-    //console.log(findUser.financialData);
-    findUser.financialData.map((item) => {
+
+    findUser.financialData.forEach((item) => {
       const arrayOfDates = item.date.split("-");
       years.push(arrayOfDates[0]);
       months.push(arrayOfDates[1]);
@@ -179,12 +179,25 @@ module.exports = {
     });
     const newYears = removeDuplicatedFromArray(years);
     const newMonths = removeDuplicatedFromArray(months);
-    console.log(newYears, newMonths);
 
-    findUser.financialData.map((item) => {
-      const arrayOfDates = item.date.split("-");
-    });
+    const yearExpenses = newYears.reduce((acc, cv) => {
+      acc[cv] = findUser.financialData.filter(
+        (item) => item.date.slice(0, 4) === cv
+      );
+      return acc;
+    }, {});
 
-    return res.status(200).send({ message: "dados coletados com sucesso" });
+    console.log(yearExpenses);
+    const monthExpenses = newMonths.reduce((acc, cv) => {
+      acc[cv] = findUser.financialData.filter(
+        (item) => item.date.slice(5, 7) === cv
+      );
+      return acc;
+    }, {});
+
+    console.log(monthExpenses);
+    // const showMonths = monthobject.map((item) => )
+
+    return res.status(200).send({ yearExpenses, monthExpenses });
   },
 };

@@ -1,1 +1,104 @@
-[{"id":1,"userId":1,"financialData":[{"financialId":3,"price":3000,"typesOfExpenses":"market ","date":"2021-10-03","name":"normal buy"},{"financialId":4,"price":2350,"typesOfExpenses":"market ","date":"2021-09-15","name":"apple buy"},{"financialId":5,"price":1000,"typesOfExpenses":"shopping ","date":"2021-02-14","name":"shoes buy"},{"financialId":6,"price":500,"typesOfExpenses":"electricity bill ","date":"2021-05-05","name":"bills"}]},{"id":2,"userId":2,"financialData":[{"financialId":1,"price":3400,"typesOfExpenses":"shopping","date":"2022-05-23","name":"day buy"}]},{"id":3,"userId":3,"financialData":[{"financialId":1,"price":5500,"typesOfExpenses":"electricity bill","date":"2022-03-17","name":"anual buy"}]}]
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "financialData": [
+      {
+        "financialId": 3,
+        "price": 3000,
+        "typesOfExpenses": "market ",
+        "date": "2021-10-03",
+        "name": "normal buy"
+      },
+      {
+        "financialId": 4,
+        "price": 2350,
+        "typesOfExpenses": "market ",
+        "date": "2021-09-15",
+        "name": "apple buy"
+      },
+      {
+        "financialId": 5,
+        "price": 1000,
+        "typesOfExpenses": "shopping ",
+        "date": "2021-02-14",
+        "name": "shoes buy"
+      },
+      {
+        "financialId": 6,
+        "price": 500,
+        "typesOfExpenses": "electricity bill ",
+        "date": "2021-05-05",
+        "name": "bills"
+      },
+      {
+        "financialId": 5,
+        "price": 3500,
+        "typesOfExpenses": "electricity bill ",
+        "date": "2022-01-04",
+        "name": "first buy"
+      },
+      {
+        "financialId": 6,
+        "price": 4000,
+        "typesOfExpenses": "shopping ",
+        "date": "2021-12-10",
+        "name": "second buy"
+      },
+      {
+        "financialId": 7,
+        "price": 3000,
+        "typesOfExpenses": "market ",
+        "date": "2021-10-03",
+        "name": "normal buy"
+      },
+      {
+        "financialId": 8,
+        "price": 2350,
+        "typesOfExpenses": "market ",
+        "date": "2021-09-15",
+        "name": "apple buy"
+      },
+      {
+        "financialId": 9,
+        "price": 1000,
+        "typesOfExpenses": "shopping ",
+        "date": "2021-02-14",
+        "name": "shoes buy"
+      },
+      {
+        "financialId": 10,
+        "price": 500,
+        "typesOfExpenses": "electricity bill ",
+        "date": "2021-05-05",
+        "name": "bills"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userId": 2,
+    "financialData": [
+      {
+        "financialId": 1,
+        "price": 3400,
+        "typesOfExpenses": "shopping",
+        "date": "2022-05-23",
+        "name": "day buy"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userId": 3,
+    "financialData": [
+      {
+        "financialId": 1,
+        "price": 5500,
+        "typesOfExpenses": "electricity bill",
+        "date": "2022-03-17",
+        "name": "anual buy"
+      }
+    ]
+  }
+]
