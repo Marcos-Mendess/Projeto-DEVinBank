@@ -94,7 +94,7 @@ Endpoint para adicionar informações dos gastos de um determinado usuário via 
 **Response body example**
 ```
 {
-	"message": "Dados salvos com sucesso"
+  "message": "Dados salvos com sucesso"
 }
 or
 {
