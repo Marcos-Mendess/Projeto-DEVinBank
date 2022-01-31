@@ -89,3 +89,20 @@ Endpoint para adicionar informações dos gastos de um determinado usuário via 
 | -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |     price | typesOfExpenses | date  | name 
 
+
+
+**Response body example**
+```
+{
+	"message": "Dados salvos com sucesso"
+}
+or
+{
+  "message": "É necessário que as células da coluna preço sejam apenas números"
+}
+or
+{
+  "message": "É necessário enviar todos os campos e escritos corretamente"
+}
+```
+
